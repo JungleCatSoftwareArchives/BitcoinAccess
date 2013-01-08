@@ -1,5 +1,6 @@
 package com.junglecatsoftware.bitcoinaccess;
 
+import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -17,7 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
+public class BitcoinAccess extends FragmentActivity implements ActionBar.TabListener {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -124,7 +125,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             return 3;
         }
 
-        @Override
+        @SuppressLint("DefaultLocale") @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
