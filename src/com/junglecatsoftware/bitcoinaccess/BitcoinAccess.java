@@ -129,11 +129,11 @@ public class BitcoinAccess extends FragmentActivity implements ActionBar.TabList
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return getString(R.string.title_section1).toUpperCase();
+                    return getString(R.string.Main_Tab).toUpperCase();
                 case 1:
-                    return getString(R.string.title_section2).toUpperCase();
+                    return getString(R.string.TX_Tab).toUpperCase();
                 case 2:
-                    return getString(R.string.title_section3).toUpperCase();
+                    return getString(R.string.Opt_Tab).toUpperCase();
             }
             return null;
         }

@@ -2,9 +2,9 @@
 <resources>
 
     <string name="app_name">BitcoinAccess</string>
-    <string name="title_section3">Section 3</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section1">Section 1</string>
+    <string name="Opt_Tab">OPTIONS</string>
+    <string name="TX_Tab">TRANSACTIONS</string>
+    <string name="Main_Tab">MAIN</string>
     <string name="menu_settings">Settings</string>
 
 </resources>
