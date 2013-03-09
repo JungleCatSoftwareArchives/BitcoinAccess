@@ -1,14 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:gravity="center|center"
-    android:orientation="vertical" >
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/Main_Balance_Label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Main_Tab" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Balance:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/Main_Balance_Value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Main_Balance_Label"
+        android:layout_alignParentRight="true"
+        android:text="136.38520234"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/Main_Unconfirmed_Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/Main_Balance_Label"
+        android:text="Unconfirmed:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/Main_Unconfirmed_Value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Main_Unconfirmed_Label"
+        android:layout_alignParentRight="true"
+        android:text="137.24936475"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#CC0000" />
+
+    <Button
+        android:id="@+id/Main_Send_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="Send Bitcoins" />
+
+    <Button
+        android:id="@+id/Main_Rec_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/Main_Send_Button"
+        android:text="Receive Bitcoins" />
+
+    <ProgressBar
+        android:id="@+id/Main_Spinner"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
