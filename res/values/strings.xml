@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">BitcoinAccess</string>
+    <string name="app_name">Bitcoin Access</string>
     <string name="Opt_Tab">OPTIONS</string>
     <string name="TX_Tab">TRANSACTIONS</string>
     <string name="Main_Tab">MAIN</string>
