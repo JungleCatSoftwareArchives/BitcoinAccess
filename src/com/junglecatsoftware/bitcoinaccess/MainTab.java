@@ -31,6 +31,8 @@ import android.widget.TextView;
 
 public class MainTab extends Fragment {
 	
+	ViewGroup root;
+	
 	public static Fragment newInstance(Context context) {
 		MainTab f = new MainTab();
 		
@@ -39,11 +41,16 @@ public class MainTab extends Fragment {
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
-		ViewGroup root = (ViewGroup) inflater.inflate(R.layout.main_tab, null);
-		
-		new GetBalance().execute((TextView)root.findViewById(R.id.Main_Balance_Value));
+		root = (ViewGroup) inflater.inflate(R.layout.main_tab, null);
 		
 		return root;
+	}
+	
+	@Override
+	public void onResume(){
+		super.onResume();
+		
+		new GetBalance().execute((TextView)root.findViewById(R.id.Main_Balance_Value));
 	}
 
 }
