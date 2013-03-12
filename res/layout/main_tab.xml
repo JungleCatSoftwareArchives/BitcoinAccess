@@ -38,27 +38,10 @@ along with BitcoinAccess. If not, see <http://www.gnu.org/licenses/>.
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/Main_Balance_Label"
         android:layout_alignParentRight="true"
-        android:text="136.38520234"
+        android:text="--"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:id="@+id/Main_Unconfirmed_Label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/Main_Balance_Label"
-        android:text="Unconfirmed:"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/Main_Unconfirmed_Value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/Main_Unconfirmed_Label"
-        android:layout_alignParentRight="true"
-        android:text="137.24936475"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#CC0000" />
+    
 
     <Button
         android:id="@+id/Main_Send_Button"
@@ -77,13 +60,5 @@ along with BitcoinAccess. If not, see <http://www.gnu.org/licenses/>.
         android:layout_alignParentRight="true"
         android:layout_below="@+id/Main_Send_Button"
         android:text="Receive Bitcoins" />
-
-    <ProgressBar
-        android:id="@+id/Main_Spinner"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
