@@ -24,8 +24,11 @@ public class GetBalance extends AsyncTask<TextView,Integer,String> {
 	@Override
 	protected String doInBackground(TextView... textViews) {
 		this.textViews = textViews;
+		if(context==null){
+			context=textViews[0].getContext();
+		}
 		
-		return BitcoinRPC.getBalance();
+		return BitcoinRPC.getBalance(context);
 	}
 	
 	@SuppressLint("DefaultLocale")

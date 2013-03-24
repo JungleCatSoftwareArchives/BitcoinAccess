@@ -6,16 +6,24 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
+
 public class BitcoinRPC {
-	private static String sendRPC(String method, String params){
+	private static String sendRPC(Context context, String method, String params){
+		SharedPreferences prefs = context.getSharedPreferences("com.junglecatsoftware.bitcoinaccess-RPC_INFO", Context.MODE_PRIVATE);
+		
+		
+		
 		OutputStreamWriter writer=null;
 		BufferedReader reader=null;
 		int id = (new java.util.Random()).nextInt();
 		try{
-			URL url = new URL("http://172.16.20.20:8332/");
+			URL url = new URL(prefs.getString("server_protocol", "http")+"://"+prefs.getString("server_host", "172.16.20.20")+":"+prefs.getString("server_port", "8332")+"/");
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			
-			conn.setRequestProperty("Authorization", "Basic "+android.util.Base64.encodeToString("test:testpass".getBytes(), android.util.Base64.NO_WRAP)); 
+			conn.setRequestProperty("Authorization", "Basic "+android.util.Base64.encodeToString((prefs.getString("server_username", "test")+":"+prefs.getString("server_password", "testpass")).getBytes(), android.util.Base64.NO_WRAP)); 
 			conn.setDoOutput(true);
 			conn.setRequestMethod("POST");
 			conn.setRequestProperty("Content-Type", "text/plain"); 
@@ -50,7 +58,7 @@ public class BitcoinRPC {
 			}
 		}
 	}
-	public static String getBalance(){
-		return sendRPC("getbalance","");
+	public static String getBalance(Context context){
+		return sendRPC(context, "getbalance","");
 	}
 }
