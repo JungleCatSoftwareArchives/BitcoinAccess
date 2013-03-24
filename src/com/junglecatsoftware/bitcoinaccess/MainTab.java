@@ -20,6 +20,7 @@
 package com.junglecatsoftware.bitcoinaccess;
 
 import com.junglecatsoftware.bitcoinaccess.BitcoinRPC.GetBalance;
+import com.junglecatsoftware.bitcoinaccess.BitcoinRPC.GetUnconfirmedBalance;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -63,6 +64,7 @@ public class MainTab extends Fragment {
 	
 	private void refreshBalance(){
 		new GetBalance(context).execute((TextView)root.findViewById(R.id.Main_Balance_Value));
+		new GetUnconfirmedBalance(context).execute((TextView)root.findViewById(R.id.Main_Unconfirmed_Balance_Value));
 	}
 
 }

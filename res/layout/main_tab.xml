@@ -41,7 +41,15 @@ along with BitcoinAccess. If not, see <http://www.gnu.org/licenses/>.
         android:text="--"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    
+    <TextView
+        android:id="@+id/Main_Unconfirmed_Balance_Value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Main_Unconfirmed_Balance_Label"
+        android:layout_alignParentRight="true"
+        android:text="--"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#990000" />
 
     <Button
         android:id="@+id/Main_Send_Button"
@@ -60,5 +68,14 @@ along with BitcoinAccess. If not, see <http://www.gnu.org/licenses/>.
         android:layout_alignParentRight="true"
         android:layout_below="@+id/Main_Send_Button"
         android:text="Receive Bitcoins" />
+
+    <TextView
+        android:id="@+id/Main_Unconfirmed_Balance_Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/Main_Balance_Label"
+        android:text="Unconfirmed:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
