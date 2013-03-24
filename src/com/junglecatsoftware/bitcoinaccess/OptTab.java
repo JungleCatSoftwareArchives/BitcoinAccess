@@ -28,16 +28,36 @@ import android.view.ViewGroup;
 
 public class OptTab extends Fragment {
 	
+	private ViewGroup root;
+	private Context context=null;
+	
 	public static Fragment newInstance(Context context) {
-		OptTab f = new OptTab();	
+		OptTab f = new OptTab(context);	
 		
 		return f;
+	}
+	public OptTab(){
+		super();
+	}
+	public OptTab(Context context){
+		super();
+		this.context = context;
 	}
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
-		ViewGroup root = (ViewGroup) inflater.inflate(R.layout.opt_tab, null);	
+		root = (ViewGroup) inflater.inflate(R.layout.opt_tab, null);
 		return root;
 	}
-
+	
+	@Override
+	public void onResume(){
+		super.onResume();
+		
+		refreshValues();
+	}
+	
+	private void refreshValues(){
+		
+	}
 }
