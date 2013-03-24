@@ -49,7 +49,7 @@ along with BitcoinAccess. If not, see <http://www.gnu.org/licenses/>.
         android:layout_alignParentRight="true"
         android:text="--"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#990000" />
+        android:textColor="#BB0000" />
 
     <Button
         android:id="@+id/Main_Send_Button"
