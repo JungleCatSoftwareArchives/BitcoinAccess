@@ -59,6 +59,6 @@ public class BitcoinRPC {
 		}
 	}
 	public static String getBalance(Context context){
-		return sendRPC(context, "getbalance","");
+		return sendRPC(context, "getbalance", "");
 	}
 }
