@@ -58,6 +58,10 @@ public class MainTab extends Fragment {
 	public void onResume(){
 		super.onResume();
 		
+		refreshBalance();
+	}
+	
+	private void refreshBalance(){
 		new GetBalance(context).execute((TextView)root.findViewById(R.id.Main_Balance_Value));
 	}
 
