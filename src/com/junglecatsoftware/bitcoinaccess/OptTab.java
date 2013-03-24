@@ -33,6 +33,7 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 public class OptTab extends Fragment {
@@ -71,6 +72,10 @@ public class OptTab extends Fragment {
 				SharedPreferences.Editor prefs = context.getSharedPreferences("com.junglecatsoftware.bitcoinaccess-RPC_INFO", Context.MODE_PRIVATE).edit();
 				prefs.putBoolean("server_https", ((ToggleButton)v).isChecked());
 				prefs.commit();
+				
+				if(!((ToggleButton)v).isChecked()){
+					Toast.makeText(context, "WARNING! Disabling HTTPS will put your RPC password at risk!", Toast.LENGTH_LONG).show();
+				}
 			}
 		});
 		
