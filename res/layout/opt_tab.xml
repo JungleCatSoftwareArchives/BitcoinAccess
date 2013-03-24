@@ -18,15 +18,123 @@ You should have received a copy of the GNU General Public License
 along with BitcoinAccess. If not, see <http://www.gnu.org/licenses/>.
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:gravity="center|center"
-    android:orientation="vertical" >
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Opt_Tab" />
-
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent" >
+	
+	<ScrollView
+		android:id="@+id/Opt_ScrollView"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:paddingBottom="16dp" >
+	
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:paddingLeft="16dp"
+			android:paddingRight="16dp"
+			android:paddingBottom="16dp" >
+			
+			<ToggleButton
+				android:id="@+id/Opt_HttpsToggle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:layout_alignParentTop="true"
+				android:text="HTTPS" />
+		
+			<EditText
+				android:id="@+id/Opt_HostField"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentLeft="true"
+				android:layout_alignParentRight="true"
+				android:layout_below="@+id/Opt_HostLabel"
+				android:ems="10"
+				android:inputType="text" />
+	
+			<TextView
+				android:id="@+id/Opt_HttpsLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignBaseline="@+id/Opt_HttpsToggle"
+				android:layout_alignBottom="@+id/Opt_HttpsToggle"
+				android:layout_alignParentLeft="true"
+				android:text="Use HTTPS"
+				android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+			<TextView
+				android:id="@+id/Opt_PortLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentLeft="true"
+				android:layout_below="@+id/Opt_HostField"
+				android:layout_marginTop="32dp"
+				android:text="RPC Port"
+				android:textAppearance="?android:attr/textAppearanceLarge" />
+			
+			<TextView
+				android:id="@+id/Opt_HostLabel"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_alignLeft="@+id/Opt_HttpsLabel"
+			    android:layout_below="@+id/Opt_HttpsToggle"
+			    android:layout_marginTop="32dp"
+			    android:text="RPC Host"
+			    android:textAppearance="?android:attr/textAppearanceLarge" />
+			
+			 <EditText
+			     android:id="@+id/Opt_PortField"
+			     android:layout_width="wrap_content"
+			     android:layout_height="wrap_content"
+			     android:layout_alignBaseline="@+id/Opt_PortLabel"
+			     android:layout_alignBottom="@+id/Opt_PortLabel"
+			     android:layout_alignParentRight="true"
+			     android:layout_toRightOf="@+id/Opt_PortLabel"
+			     android:layout_marginLeft="32dp"
+			     android:ems="10"
+			     android:inputType="number" >
+			</EditText>
+	
+			 <TextView
+				android:id="@+id/Opt_UsernameLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentLeft="true"
+				android:layout_below="@+id/Opt_PortLabel"
+				android:layout_marginTop="32dp"
+				android:text="RPC Username"
+				android:textAppearance="?android:attr/textAppearanceLarge" />
+		
+			<EditText
+				android:id="@+id/Opt_UsernameField"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentLeft="true"
+				android:layout_alignParentRight="true"
+				android:layout_below="@+id/Opt_UsernameLabel"
+				android:ems="10"
+				android:inputType="text" />
+	
+			 <TextView
+				android:id="@+id/Opt_PasswordLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentLeft="true"
+				android:layout_below="@+id/Opt_UsernameField"
+				android:layout_marginTop="32dp"
+				android:text="RPC Password"
+				android:textAppearance="?android:attr/textAppearanceLarge" />
+		
+			<EditText
+			    android:id="@+id/Opt_PasswordField"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_alignParentLeft="true"
+			    android:layout_alignParentRight="true"
+			    android:layout_below="@+id/Opt_PasswordLabel"
+			    android:ems="10"
+			    android:inputType="text|textPassword" />
+	
+		</RelativeLayout>
+	</ScrollView>
 </LinearLayout>
