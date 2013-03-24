@@ -36,22 +36,15 @@ public class MainTab extends Fragment {
 	private Context context=null;
 	
 	public static Fragment newInstance(Context context) {
-		MainTab f = new MainTab(context);
+		MainTab f = new MainTab();
 		
 		return f;
-	}
-	public MainTab(){
-		super();
-	}
-	public MainTab(Context context){
-		super();
-		this.context = context;
 	}
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 		root = (ViewGroup) inflater.inflate(R.layout.main_tab, null);
-		
+		context = container.getContext().getApplicationContext();
 		return root;
 	}
 	

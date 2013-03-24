@@ -32,21 +32,15 @@ public class OptTab extends Fragment {
 	private Context context=null;
 	
 	public static Fragment newInstance(Context context) {
-		OptTab f = new OptTab(context);	
+		OptTab f = new OptTab();	
 		
 		return f;
-	}
-	public OptTab(){
-		super();
-	}
-	public OptTab(Context context){
-		super();
-		this.context = context;
 	}
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 		root = (ViewGroup) inflater.inflate(R.layout.opt_tab, null);
+		context = container.getContext().getApplicationContext();
 		return root;
 	}
 	
