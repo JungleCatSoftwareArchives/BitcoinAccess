@@ -28,7 +28,7 @@ public class GetBalance extends AsyncTask<TextView,Integer,String> {
 			context = textViews[0].getContext().getApplicationContext();
 		}
 		
-		return BitcoinRPC.getBalance(context);
+		return BitcoinRPC.getBalance(context,6);
 	}
 	
 	@SuppressLint("DefaultLocale")
