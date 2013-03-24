@@ -13,16 +13,18 @@ public class BitcoinRPC {
 	private static String sendRPC(Context context, String method, String params){
 		SharedPreferences prefs = context.getSharedPreferences("com.junglecatsoftware.bitcoinaccess-RPC_INFO", Context.MODE_PRIVATE);
 		
-		
-		
 		OutputStreamWriter writer=null;
 		BufferedReader reader=null;
 		int id = (new java.util.Random()).nextInt();
 		try{
-			URL url = new URL(prefs.getString("server_protocol", "http")+"://"+prefs.getString("server_host", "172.16.20.20")+":"+prefs.getString("server_port", "8332")+"/");
+			String RPC_Protocol = "http";
+			if(prefs.getBoolean("server_https", true)){
+				RPC_Protocol += "s";
+			}
+			URL url = new URL(RPC_Protocol+"://"+prefs.getString("server_host", "")+":"+prefs.getString("server_port", "8332")+"/");
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			
-			conn.setRequestProperty("Authorization", "Basic "+android.util.Base64.encodeToString((prefs.getString("server_username", "test")+":"+prefs.getString("server_password", "testpass")).getBytes(), android.util.Base64.NO_WRAP)); 
+			conn.setRequestProperty("Authorization", "Basic "+android.util.Base64.encodeToString((prefs.getString("server_username", "")+":"+prefs.getString("server_password", "")).getBytes(), android.util.Base64.NO_WRAP)); 
 			conn.setDoOutput(true);
 			conn.setRequestMethod("POST");
 			conn.setRequestProperty("Content-Type", "text/plain"); 
