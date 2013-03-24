@@ -6,7 +6,6 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 
@@ -59,6 +58,15 @@ public class BitcoinRPC {
 		}
 	}
 	public static String getBalance(Context context){
-		return sendRPC(context, "getbalance", "");
+		return getBalance(context, "*", 6);
+	}
+	public static String getBalance(Context context, String account){
+		return getBalance(context, account, 6);
+	}
+	public static String getBalance(Context context, int minconf){
+		return getBalance(context, "*", minconf);
+	}
+	public static String getBalance(Context context, String account, int minconf){
+		return sendRPC(context, "getbalance", "\""+account+"\","+minconf+"");
 	}
 }
